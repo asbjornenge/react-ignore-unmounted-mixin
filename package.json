@@ -4,7 +4,7 @@
   "description": "Ignore updates to unmounted react components",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -R nyan -w --check-leaks"
   },
   "keywords": [
     "react",
@@ -14,5 +14,8 @@
   "license": "BSD",
   "dependencies": {
     "react": "^0.11.0"
+  },
+  "devDependencies": {
+    "testdom": "^0.1.0"
   }
 }

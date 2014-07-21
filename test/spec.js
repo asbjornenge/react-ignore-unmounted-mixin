@@ -1,16 +1,33 @@
-var assert         = require('assert')
-var React          = require('react')
-var ReactAddons    = require('react/addons')
-var ReactTestUtils = React.addons.TestUtils
+require('testdom')('<html><body></body></html>')
 
-describe('My Component', function() {
+var assert               = require('assert')
+var React                = require('react')
+var ReactAddons          = require('react/addons')
+var ReactTestUtils       = React.addons.TestUtils
+var IgnoreUnmountedMixin = require('../index')
 
-    it('should render an input', function(done) {
-        var _tree = render({}, function() {
-            var __input = document.querySelectorAll('input')
-            var _input  = ReactTestUtils.findRenderedDOMComponentWithTag(_tree, 'input')
-            assert(false)
+var WithoutMixin = React.createClass({
+    render : function() {
+        return React.DOM.div({className:'WithoutClass'},null)
+    }
+})
+var WithMixin = React.createClass({
+    mixins : [IgnoreUnmountedMixin],
+    render : function() {
+        return React.DOM.div({className:'WithClass'},null)
+    }
+})
+
+describe('IgnoreUnmountedMixin', function() {
+
+    it('should fail without the mixin', function(done) {
+        React.renderComponent(WithoutMixin({}), document.body, function() {
+            console.log('rendered')
+            assert(true)
+            done()
         })
     })
+
+    // it('should work with the mixin')
 
 })
