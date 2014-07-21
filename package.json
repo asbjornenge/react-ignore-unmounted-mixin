@@ -1,0 +1,18 @@
+{
+  "name": "react-ignore-unmounted-mixin",
+  "version": "0.1.0",
+  "description": "Ignore updates to unmounted react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "react",
+    "react-mixin"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD",
+  "dependencies": {
+    "react": "^0.11.0"
+  }
+}
