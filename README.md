@@ -2,7 +2,7 @@
 
 Ignore updates to unmounted react components.
 
-> Because sometimes your users are faster than your api.
+> Because sometimes your users are faster than your api. And you're lazy.
 
 A react component is rendered. It fires off a few ajax requests to the server. Like a good developer you have some initial state values for your users to enjoy your beautiful component while awaiting the response. It's a java legacy backend, so naturally, it takes ages. The use is impatient and clicks on some cat videos that replaces the component awaiting the ajax response. Once the ajax response is finally ready, the callback tries to update the component. But it has (as all things evetually will) been replaced by cat videos. And you are stuck with an ugly error like this:
 
@@ -12,7 +12,7 @@ Like the good developer you are, you should ofcourse value aborting your ajax re
 
 **IgnoreUnmountedMixin to the rescue!**
 
-**IgnoreUnmountedMixin** will dirtyhack you around this issue by verifying <code>this.isMounted()</code> under <code>shouldComponentUpdate</code>. E.g. check if the component is mounted before allowing any updates to it.
+**IgnoreUnmountedMixin** will dirtyhack you around this issue by verifying <code>this.isMounted()</code> before calling <code>replaceState</code>. Thus checking if the component is mounted before allowing any updates to it.
 
 ## Installing
 
