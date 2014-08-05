@@ -1,10 +1,14 @@
 {
   "name": "react-ignore-unmounted-mixin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ignore updates to unmounted react components",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R nyan -w --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/asbjornenge/react-ignore-unmounted-mixin.git"
   },
   "keywords": [
     "react",
@@ -12,6 +16,10 @@
   ],
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/react-ignore-unmounted-mixin/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/react-ignore-unmounted-mixin",
   "dependencies": {
     "react": "^0.11.0"
   },
